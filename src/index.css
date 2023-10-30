@@ -1,0 +1,298 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Header */
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 576px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/* Contact */
+.contacts-grp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.contact {
+  border: 1px solid grey;
+  padding: 10px;
+  margin: 10px;
+  width: 45%;
+}
+.user-grp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+img {
+  width: 50px;
+}
+.user {
+  display: flex;
+  align-items: center;
+}
+.name {
+  margin-left: 10px;
+}
+.btn-grp {
+  display: flex;
+  flex-direction: column;
+}
+.btn-grp :nth-child(2) {
+  margin-top: 10px;
+}
+button {
+  padding: 5px 10px;
+  background-color: transparent;
+}
+.job-description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.title {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+}
+
+.title img {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  width: 110px;
+  height: 70px;
+}
+@media only screen and (max-width: 576px) {
+  .contact {
+    width: 90%;
+  }
+}
+/* Create User */
+.add {
+  padding-top: 100px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+.info-text {
+  font-size: 1rem;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: #fff;
+  width: 300px;
+  height: 400px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .input-addon {
+  margin-top: 1.5rem;
+}
+
+.form-element {
+  margin-top: 0.8rem;
+  height: 1.5rem;
+  border: 1px solid #d2d6de;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.form-element:focus {
+  outline: 1px solid #673ab7;
+}
+
+.form-element::placeholder {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.8rem;
+}
+
+.form-element.is-submit {
+  height: 3rem;
+  font-size: 1rem;
+  line-height: normal;
+  font-family: "Raleway", sans-serif;
+  background: #673ab7;
+  color: #fff;
+}
+
+.input-addon {
+  display: flex;
+}
+
+.input-addon > .form-element {
+  margin-top: 0;
+}
+
+.input-field {
+  flex: 1;
+}
+
+.input-addon-item {
+  padding: 5px;
+  width: 35px;
+  border: 1px solid #d2d6de;
+  border-left: 0;
+  background: #fff;
+  color: #6a6b6d;
+}
+/* Edit Form */
+.edit-input {
+  width: 100px;
+  word-wrap: break-word;
+}
